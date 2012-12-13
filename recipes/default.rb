@@ -19,3 +19,4 @@
 include_recipe "openvz::repo"
 include_recipe "openvz::install"
 include_recipe "openvz::services"
+include_recipe "openvz::sysctl"
