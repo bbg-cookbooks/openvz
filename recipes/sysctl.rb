@@ -1,3 +1,10 @@
-node.openvz.sysctl.each do |k,v|
-  execute "sysctl -w #{k}=#{v}"
+directory "/etc/sysctl.d/" do
+  recursive true
+end
+
+template "/etc/sysctl.d/openvz" do
+  source "openvz.erb"
+  mode  00600
+  user  "root"
+  group "root"
 end
