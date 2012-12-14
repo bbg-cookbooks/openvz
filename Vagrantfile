@@ -2,6 +2,7 @@ require 'berkshelf/vagrant'
 require 'jamie/vagrant'
 
 Vagrant::Config.run do |config|
+  config.vm.define :openvz do |config|
   Jamie::Vagrant.define_vms(config)
 
   # The path to the Berksfile to use with Vagrant Berkshelf
@@ -33,5 +34,6 @@ Vagrant::Config.run do |config|
     chef.run_list = [
       "recipe[openvz::default]"
     ]
+    end
   end
 end
