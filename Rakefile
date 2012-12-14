@@ -9,6 +9,8 @@ namespace "vagrant" do
   }
 
   task "fix"do
+    #`vagrant ssh --command 'sudo yum install -y vzkernel-devel'`
+    #`vagrant ssh --command "sudo /etc/init.d/vboxadd setup"`
     Net::SSH.start(HOSTS['openvz'], USER, :password => PASSWORD, :port => 2222) do |ssh|
       ssh.exec "sudo yum install -y vzkernel-devel"
       ssh.loop
