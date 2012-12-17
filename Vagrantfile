@@ -2,8 +2,9 @@ require 'berkshelf/vagrant'
 require 'jamie/vagrant'
 
 Vagrant::Config.run do |config|
-  config.vm.define :openvz do |config|
   Jamie::Vagrant.define_vms(config)
+
+  config.vm.define :openvz do |config|
 
   # The path to the Berksfile to use with Vagrant Berkshelf
   # config.berkshelf.berksfile_path = "./Berksfile"
