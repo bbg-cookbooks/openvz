@@ -1,1 +1,1 @@
-default['openvz']['yum']['packages'] = ['vzkernel','vzctl','vzquota']
+default.openvz.yum.packages = ['vzkernel','vzctl','vzquota']

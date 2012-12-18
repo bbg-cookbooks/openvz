@@ -23,5 +23,6 @@ namespace "vagrant" do
 end
 
 task :default => :spec do
-  system "rspec spec/*"
+  sh "rspec spec/*"
+  sh "foodcritic ."
 end
