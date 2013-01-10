@@ -26,3 +26,10 @@ task :default => :spec do
   sh "rspec spec/*"
   sh "foodcritic ."
 end
+
+begin
+  require 'jamie/rake_tasks'
+  Jamie::RakeTasks.new
+rescue LoadError
+  puts ">>>>> Jamie gem not loaded, omitting tasks" unless ENV['CI']
+end
